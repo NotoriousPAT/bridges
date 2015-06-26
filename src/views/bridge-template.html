@@ -1,0 +1,13 @@
+<h1>Bridge Detail</h1>
+
+<ul class="bridge-detail">
+  <% _.pairs(m).forEach(function (pair) { %>
+    <li>
+      <%- pair[0] %>
+      <%- pair[1] %>
+    </li>
+  <% }) %>
+</ul>
+
+<div class="bridge-chart">
+</div>
