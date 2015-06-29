@@ -1,0 +1,28 @@
+<h1>Cars Summary Page</h1>
+
+<ul class="car-list">
+  <% m.cars.forEach(function (car) { %>
+    <li class="car">
+      <a href="#cars/<%- car.id %>">
+        <%- car.normalizedLosses %>
+        <%- car.make %>
+        <%- car.fuelType %>
+        <%- car.aspiration %>
+        <%- car.numDoors %>
+        <%- car.bodyStyle %>
+        <%- car.driveWheels %>
+        <%- car.engineLocation %>
+        <%- car.length %>
+        <%- car.width %>
+        <%- car.height %>
+        <%- car.curbWeight %>
+        <%- car.numCylinders %>
+        <%- car.horsepower %>
+        <%- car.peakRpm %>
+        <%- car.cityMpg %>
+        <%- car.highwayMpg %>
+        <%- car.price %>
+      </a>
+    </li>
+  <% }) %>
+</ul>
