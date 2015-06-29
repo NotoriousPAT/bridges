@@ -15,16 +15,15 @@ router.route('cars/:id', function (carId) {
   .then(renderEachCar);
 
   function parseCarsCsv(carsData) {
-    return carsData
+    return carsData;
 
       .split('\n')
       .map(function (record) {
-        var cells = record.split(',');
+      var cells = record.split(',');
 
 
         return {
-
-id:[],
+              id:[],
               normalizedLosses:cells[1],
               make:cells[2],
               fuelType:cells[3],
@@ -34,14 +33,14 @@ id:[],
               driveWheels:  cells[7],
               engineLocation: cells [8],
               length: cells[10],
-              width:  cells[11],
+              width: cells[11],
               height: cells[12],
-              curbWeight:  cells[13],
+              curbWeight: cells[13],
               numCylinders: cells [16],
-              horsepower:  cells[21],
+              horsepower: cells[21],
               peakRpm: cells[22],
-              cityMpg:      cells[23],
-              highwayMpg:   cells[24],
+              cityMpg: cells[23],
+              highwayMpg:  cells[24],
               price:   cells[25]
         };
       });
@@ -53,13 +52,13 @@ id:[],
 
   function renderEachCar(carsData) {
     var car = _.findWhere(carsData, parseInt(carId));
-   var carTemplate = views['car-template'];
-   var templateFn = _.template(carTemplate, { variable: 'm' });
-   var carHTML = templateFn({car: car});
+    var carTemplate = views['car-template'];
+    var templateFn = _.template(carTemplate, { variable: 'm' });
+    var carHTML = templateFn({car: car});
 
-   $('.main-content').html(carHTML);
-conosle.log(carsData);
-   renderChart(car, carsData);
+    $('.main-content').html(carHTML);
+
+    renderChart(car, carsData);
   }
 
   function renderChart(car, carsData) {
@@ -92,19 +91,19 @@ conosle.log(carsData);
     //   }
     // }
 
-    c3.generate({
-      bindto: '.car-chart',
-      data: {
-        columns: [
-          [];
-          []
-        ],
-        type : 'pie'
-      },
-      color: {
-        pattern: ['#3FBEBB', '#FF5843', '#39B54A']
-      }
-    });
-  }
+  //   c3.generate({
+  //     bindto: '.car-chart',
+  //     data: {
+  //       columns: [
+  //         [];
+  //         [];
+  //       ],
+  //       type : 'pie'
+  //     },
+  //     color: {
+  //       pattern: ['#3FBEBB', '#FF5843', '#39B54A']
+  //     }
+  //   });
+  // }
 
 });

@@ -2,7 +2,6 @@
 
 var Backbone = require('backbone');
 var _ = require('underscore');
-
 var SortedRouter = Backbone.Router.extend({
   sortedRoutes: {},
 
